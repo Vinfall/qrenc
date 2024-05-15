@@ -11,14 +11,16 @@ def generate_qr(data):
         version=1,
         error_correction=qrcode.constants.ERROR_CORRECT_L,
         box_size=1,
-        border=4,
+        border=0,  # Set border to 0 to avoid additional margins
     )
     qr.add_data(data)
     qr.make(fit=True)
 
     # Create an ASCII representation of the QR code
+    qr_matrix = qr.get_matrix()
+
     ascii_qr = []
-    for line in qr.get_matrix():
+    for line in qr_matrix:
         ascii_line = "".join(["██" if cell else "  " for cell in line])
         ascii_qr.append(ascii_line)
 
