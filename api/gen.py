@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 def get_error_message():
     error_msg = """
-    No string provided. Usage: example.com/?date=helloworld
+    No string provided. Usage: example.com/?data=helloworld
     """
 
     return error_msg
