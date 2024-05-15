@@ -1,11 +1,13 @@
-from flask import Flask, Response
+from flask import Flask, Response, request
 import qrcode
 
 app = Flask(__name__)
 
 
-@app.route("/<data>")
-def generate_qr(data):
+@app.route("/", methods=["GET"])
+def generate_qr():
+    data = request.args.get("data", "")
+
     # Generate a QR code
     qr = qrcode.QRCode(
         version=1,
