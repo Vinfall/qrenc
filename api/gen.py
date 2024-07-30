@@ -1,5 +1,5 @@
-from flask import Flask, Response, request
 import qrcode
+from flask import Flask, Response, request
 
 app = Flask(__name__)
 
@@ -46,4 +46,4 @@ def generate_qr():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)
