@@ -5,6 +5,9 @@ app = Flask(__name__)
 
 
 def get_error_message():
+    """
+    Return error (aka. help) message
+    """
     error_msg = """
     No string provided. Usage: example.com/?data=helloworld
     """
@@ -14,6 +17,9 @@ def get_error_message():
 
 @app.route("/", methods=["GET"])
 def generate_qr():
+    """
+    Generate QR code using input
+    """
     data = request.args.get("data", "")
     if data:
         # Generate a QR code
