@@ -1,12 +1,17 @@
 # QR encode
 
+> [!WARNING]
+> Deprecated this toy as I revisited the awesome [libqrencode](https://github.com/fukuchi/libqrencode) library.
+> Seriously, it works in a much faster, offline and customizable way and even has a micro QR code feature.
+> For a similar `qr()` function below, use `echo "$1" | qrencode --type=utf8 --margin=2`.
+
 ## Intro
 
 Python script written in [Flask3](https://github.com/pallets/flask/) to generate QR code from input.
 It works as a serverless function so you can deploy on serverless platforms like Vercel
 or simply run it locally for better privacy.
 
-Tested to work on Python 3.12.
+Tested to work on Python 3.12-3.13.
 
 ## Usage
 
